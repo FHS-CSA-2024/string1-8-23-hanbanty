@@ -127,7 +127,7 @@ public class String1
      * withoutEnd("coding") â†’ "odin"
      */
     public String withoutEnd(String str) {
-        return str.substring(0,str.length()-2);
+        return str.substring(1,str.length()-1);
     }
 
     /*
@@ -171,7 +171,7 @@ public class String1
             return firstTwo + firstTwo + firstTwo;
         }
         else{
-            return str;
+            return str+str+str;
         }
     }
 
