@@ -196,7 +196,10 @@ public class String1
      * hasBad("xxbadxx") â†’ false
      */
     public boolean hasBad(String str) {
-        if (str.startsWith("bad") || (str.substring(2)).startsWith("bad")){
+        if (str.length()>=3 && str.startsWith("bad")){
+            return true;
+        }
+        if (str.length()>=4 && (str.substring(2)).startsWith("bad")){
             return true;
         }
         else
@@ -237,18 +240,17 @@ public class String1
      *minCat("java", "Hello") â†’ "javaello"
      */
     public String minCat(String a, String b) {
-        if (a.length()>b.length()){
-            return a.substring(a.length()-b.length()) + b;
-
+        if (a.length() > b.length()) {
+            return a.substring(a.length() - b.length()) + b;
         }
-        if (a.length()<b.length()){
-            return b.substring(b.length()-a.length()) + a;
-
+        else if (a.length() < b.length()) {
+            return b.substring(b.length() - a.length()) + a;
         }
         else {
-            return a+b;
+            return a + b;
         }
     }
+
 
     /*
      * Given a string, if the first or last chars are 'x', return the string without those 'x' chars,
@@ -258,7 +260,11 @@ public class String1
      * withoutX("Hxix") â†’ "Hxi"
      */
     public String withoutX(String str) {
-        if (str.startsWith("x")){
+
+        if (str.startsWith("x") && str.endsWith("x")){
+            return str.substring(1,str.length()-1);
+        }
+        else if (str.startsWith("x")){
             return str.substring(1);
         }
         else if (str.endsWith("x")) {
