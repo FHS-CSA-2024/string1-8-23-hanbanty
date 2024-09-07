@@ -196,7 +196,7 @@ public class String1
      * hasBad("xxbadxx") â†’ false
      */
     public boolean hasBad(String str) {
-        if (str.contains("bad")){
+        if (str.startsWith("bad") || (str.substring(2)).startsWith("bad")){
             return true;
         }
         else
@@ -212,6 +212,12 @@ public class String1
      * conCat("abc", "") â†’ "abc"
      */
     public String conCat(String a, String b) {
+        if (a.isEmpty()){
+            return b;
+        }
+        if (b.isEmpty()){
+            return a;
+        }
         if (a.endsWith(b.substring(0,1))){
             return a+b.substring(1);
         }
