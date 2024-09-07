@@ -196,15 +196,15 @@ public class String1
      * hasBad("xxbadxx") â†’ false
      */
     public boolean hasBad(String str) {
-        if (str.length()>=3 && str.startsWith("bad")){
+        if (str.length() >= 3 && str.startsWith("bad")) {
             return true;
         }
-        if (str.length()>=4 && (str.substring(2)).startsWith("bad")){
+        if (str.length() >= 4 && str.substring(1, 4).equals("bad")) {
             return true;
         }
-        else
-            return false;
+        return false;
     }
+
 
     /*
      * Given two strings, append them together (known as "concatenation") and return the result.
@@ -242,14 +242,13 @@ public class String1
     public String minCat(String a, String b) {
         if (a.length() > b.length()) {
             return a.substring(a.length() - b.length()) + b;
-        }
-        else if (a.length() < b.length()) {
+        } else if (a.length() < b.length()) {
             return b.substring(b.length() - a.length()) + a;
-        }
-        else {
+        } else {
             return a + b;
         }
     }
+
 
 
     /*
